@@ -3,7 +3,6 @@ import pandas as pd
 
 path = ''
 def filter_csv(path):
-    # Use a breakpoint in the code line below to debug your script.
     group_1 = dict()
     group_1['id'] = list()
     group_1['13C'] = list()
@@ -40,10 +39,8 @@ def to_excel(*args):
     for k in args:
         for i in range(len(k)):
             df = pd.DataFrame(k[i], [pd.Index(range(1, len(k[i].get('id')) + 1))])
-            df.to_excel(f'/Users/antonstrokov/Desktop/group{i}.xlsx', sheet_name='kek')
+            df.to_excel(f'/Users/antonstrokov/Desktop/group{i}.xlsx', sheet_name='isotopic_data')
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print(filter_csv())
     to_excel(filter_csv())
